@@ -1,0 +1,18 @@
+[package]
+name = "env_logger_timezone_fmt"
+version = "0.1.0"
+authors = ["heqingpan <heqingpan@126.com>"]
+license = "MIT/Apache-2.0"
+description = "env_logger timezone format"
+repository = "https://github.com/heqingpan/env_logger_timezone_fmt"
+readme = "README.md"
+keywords = ["env_logger", "format","timezone"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+log = "0.4"
+env_logger = "0.11"
+chrono = "0.4"
+anstyle = "1.0"
