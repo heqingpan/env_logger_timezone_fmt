@@ -5,8 +5,12 @@ use std::time::Duration;
 
 fn main() {
     println!("hello, world!");
+    // system local timezone
     //let timezone_fmt = Arc::new(TimeZoneFormatEnv::default());
-    let timezone_fmt = Arc::new(TimeZoneFormatEnv::new(None,Some(TimestampPrecision::Millis)));
+    // system local timezone
+    //let timezone_fmt = Arc::new(TimeZoneFormatEnv::new(None,Some(TimestampPrecision::Millis)));
+    // GMT+8
+    let timezone_fmt = Arc::new(TimeZoneFormatEnv::new(Some(8*60*60),Some(TimestampPrecision::Millis)));
     env_logger::Builder::from_env(Env::default().default_filter_or("info"))
         .format(move |buf, record| TimeZoneFormat::new(buf, &timezone_fmt).write(record))
         .init();
